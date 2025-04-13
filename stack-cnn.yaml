@@ -1,0 +1,15 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+
+functions:
+  facesdetection-cnn:
+    lang: python3-flask-debian
+    handler: ./facesdetection-python-cnn
+    image: martinezmario/facesdetection-cnn:latest
+    environment:
+      PROTOTXT_FILE: /home/app/function/deploy.prototxt
+      CAFFE_MODEL_FILE: /home/app/function/res10_300x300_ssd_iter_140000_fp16.caffemodel
+
+
