@@ -63,7 +63,7 @@ Las redes neuronales convolucionales son especialmente eficaces en tareas de vis
 ### Despliegue de la función con CNN
 1. Construcción y subida de la imagen.
 ```bash
-faas-cli build -f stack.yaml
+faas-cli build -f stack-cnn.yaml
 ```
 2. Invocación de la función.
 ```bash
@@ -92,7 +92,7 @@ cat output_base64.txt | base64 -d > result.jpg
 ### Ejecución del modelo usando CNN
 
 ```bash
-faas-cli up -f stack.yaml
+faas-cli up -f stack-cnn.yaml
 
 echo "https://media.istockphoto.com/id/1368965646/es/foto/chicos-y-chicas-multi%C3%A9tnicos-que-se-toman-selfies-al-aire-libre-con-luz-de-fondo-concepto-de.jpg?s=612x612&w=0&k=20&c=QC9JqaBFDnZZtwutt6bvGFLXmmtbv9e355syXsG39KE=" | faas-cli invoke facesdetection-cnn > output_base64.txt
 
